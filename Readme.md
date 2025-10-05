@@ -30,3 +30,11 @@
 - vagrant up
 - vagrant status
 - vagrant ssh [vm1|vm2]
+
+### Download Vagrant Boxes
+
+- ./download_boxes.sh
+
+### Convert the Disk Image
+
+- ./convert_disks.sh
