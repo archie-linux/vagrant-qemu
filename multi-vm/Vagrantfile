@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+  vm_configs = [
+    { name: "vm1", memory: "1024", cpus: 1, ssh_port: 2201 },
+    { name: "vm2", memory: "2048", cpus: 2, ssh_port: 2202 },
+    { name: "vm3", memory: "4096", cpus: 2, ssh_port: 2203 }
+  ]
+  vm_configs.each_with_index do |vm, index|
+    config.vm.define vm[:name] do |v|
+      v.vm.box = "perk/ubuntu-2204-arm64"
+      v.vm.hostname = vm[:name]
+
+      # QEMU Provider Configuration
+      v.vm.provider "qemu" do |qemu|
+        qemu.memory = vm[:memory]
+        qemu.cpus = vm[:cpus]
+        qemu.ssh_port = vm[:ssh_port]
+      end
+    end
+  end
+end

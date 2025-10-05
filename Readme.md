@@ -11,6 +11,7 @@
 
 ### Start the VM
 
+- cd single-vm
 - vagrant up
 - vagrant ssh
 
@@ -23,5 +24,9 @@
 
 - config.vm.synced_folder "./shared_folder", "/home/vagrant/shared"
 
+### Vagrant Multi-VM
 
-
+- cd multi-vm
+- vagrant up
+- vagrant status
+- vagrant ssh [vm1|vm2]
