@@ -1,0 +1,27 @@
+### Install Virt-Manager
+
+- brew install --cask xquartz
+- brew install virt-manager
+
+### Install Vagrant and QEMU
+
+- brew install vagrant
+- brew install qemu
+- vagrant plugin install vagrant-qemu
+
+### Start the VM
+
+- vagrant up
+- vagrant ssh
+
+### Vagrant Transfer File via SCP
+
+- vagrant plugin install vagrant-scp
+- vagrant scp /path/to/local/file :/home/vagrant/
+
+### Vagrant Synced Folders
+
+- config.vm.synced_folder "./shared_folder", "/home/vagrant/shared"
+
+
+
